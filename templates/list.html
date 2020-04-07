@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <body>
+    <h1>Кто стоит в очереди?</h1>
+    {% set user_list = ['Ваня', 'Петя', 'Шурик', 'Кирилл'] %}
+    <ul>
+    {% for user in user_list %}
+    <li>{{ loop.index }} - {{ user }} {% if loop.first %} первый в очереди {% elif loop.last %} последний. {% endif %}
+    </li>
+    {% endfor %}
+    </ul>
+    </body>
+{% endblock %}
